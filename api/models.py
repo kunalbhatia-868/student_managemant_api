@@ -19,6 +19,9 @@ class Student(models.Model):
     institute = models.ForeignKey(
         'Institute', on_delete=models.CASCADE, null=True, blank=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Institute(models.Model):
 
@@ -29,3 +32,6 @@ class Institute(models.Model):
 
     name = models.CharField(max_length=200)
     type_of_institute = models.CharField(max_length=1, choices=TYPES)
+
+    def __str__(self):
+        return self.name
